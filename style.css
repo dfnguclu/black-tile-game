@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+.cover-page {
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    animation: fadeIn 1s;
+}
+
+.cover-page h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 48px;
+    margin-bottom: 50px;
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+}
+
+.team-members {
+    background: rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 30px;
+}
+
+.team-members h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.member-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.member {
+    text-align: center;
+}
+
+.member-photo {
+    width: 120px;
+    height: 120px;
+    background: white;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    border: 3px solid white;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.member-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.member-id {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.click-instruction {
+    font-size: 24px;
+    animation: pulse 2s infinite;
+}
+
+
+.countdown-screen {
+    text-align: center;
+}
+
+.countdown-number {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 150px;
+    color: white;
+    text-shadow: 6px 6px 12px rgba(0,0,0,0.4);
+    animation: countdownPulse 1s ease-in-out;
+}
+
+
+.game-screen {
+    width: 90%;
+    max-width: 380px;
+    animation: fadeIn 0.5s;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(255,255,255,0.9);
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.score-item {
+    text-align: center;
+}
+
+.score-item .label {
+    display: block;
+    font-size: 10px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.score-item span:last-child {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.game-message {
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    padding: 8px;
+    background: rgba(0,0,0,0.3);
+    font-weight: bold;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 6px;
+    padding: 10px;
+    background: rgba(255,255,255,0.9);
+    aspect-ratio: 1;
+}
+
+.tile {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tile.black {
+    background: #333;
+    animation: tileAppear 0.5s;
+}
+
+.tile.green {
+    background: #4CAF50;
+}
+
+.tile-point {
+    position: absolute;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    animation: pointFade 1s forwards;
+}
+
+.score-bar-container {
+    background: rgba(255,255,255,0.9);
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+}
+
+.score-bar {
+    height: 20px;
+    background: linear-gradient(90deg, #4CAF50 0%, #FFC107 50%, #F44336 100%);
+    border-radius: 10px;
+    transition: width 0.1s linear;
+    width: 100%;
+}
+
+.score-bar-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+
+.game-over-screen {
+    text-align: center;
+    color: white;
+}
+
+.game-over-message {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 36px;
+    margin-bottom: 30px;
+    animation: fadeIn 1s;
+}
+
+.restart-message {
+    font-size: 24px;
+    animation: bounce 2s infinite;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes countdownPulse {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes tileAppear {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pointFade {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-50px); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}

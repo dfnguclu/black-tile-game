@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Tile Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="coverPage" class="cover-page">
+        <h1>Black Tile Game</h1>
+        <div class="team-members">
+            <h2>Project Team</h2>
+            <div class="member-list">
+                <div class="member">
+                    <img src="student1.jpg" alt="Defne Güçlü" class="member-photo">
+                    <p class="member-name">Defne Güçlü</p>
+                    <p class="member-id">ID: 22402562</p>
+                </div>
+            </div>
+        </div>
+        <p class="click-instruction">Click anywhere to start</p>
+    </div>
+
+   
+    <div id="countdownScreen" class="countdown-screen hidden">
+        <div id="countdownNumber" class="countdown-number">3</div>
+    </div>
+
+    
+    <div id="gameScreen" class="game-screen hidden">
+        <div class="game-header">
+            <div class="score-item">
+                <span class="label">High Score:</span>
+                <span id="highScore">0</span>
+            </div>
+            <div class="score-item">
+                <span class="label">Score:</span>
+                <span id="currentScore">0</span>
+            </div>
+            <div class="score-item">
+                <span class="label">Time:</span>
+                <span id="timer">10</span>
+            </div>
+        </div>
+
+        <div class="game-message">Tap the black tiles!</div>
+
+        <div id="gameBoard" class="game-board">
+            
+        </div>
+
+        <div class="score-bar-container">
+            <div id="scoreBar" class="score-bar"></div>
+            <span id="scoreBarValue" class="score-bar-value">10</span>
+        </div>
+    </div>
+
+    
+    <div id="gameOverScreen" class="game-over-screen hidden">
+        <div id="gameOverMessage" class="game-over-message"></div>
+        <div class="restart-message">Press F5 to play again</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
